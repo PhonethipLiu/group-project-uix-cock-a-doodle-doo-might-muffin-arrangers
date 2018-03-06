@@ -2,10 +2,16 @@
 
 console.log("main js here");
 
-var weather_load=require("./weather_load");
+let $ = require('../lib/node_modules/jquery');
+let news = require("./news-Getter");
+let meetUps = require('./ajaxCall');
+let bookSearch = require("./books-getter");
 
+// var weather_load=require("./weather_load");
 
-let user = require("./user");
+// let user = require("./user");
+
+// let user = require("./user");
 
 // API key: 511e64b5fdc44764af3517769a250375 //
 
@@ -13,8 +19,8 @@ let user = require("./user");
 
 // this code works also but grunt doesn't like that Request is not defined //
 
-var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=us&' + 'apiKey=511e64b5fdc44764af3517769a250375';
+// var url = 'https://newsapi.org/v2/top-headlines?' +
+//           'country=us&' + 'apiKey=511e64b5fdc44764af3517769a250375';
 
 
 // var req = new request(url);
@@ -61,3 +67,4 @@ var url = 'https://newsapi.org/v2/top-headlines?' +
 //     });
 
 // PH == jQuery option //
+
