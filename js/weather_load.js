@@ -6,7 +6,6 @@ console.log("weather");
 var weather;
 var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
 var APPID ='7c6212572dc00aca5008de2575471183&units=imperial';
-
 var temp;
 var loc;
 var icon;
@@ -14,6 +13,9 @@ var humidity;
 var wind;
 var direction;
 let i;
+
+
+
 function update(weather) {
     icon.src = "../imgs/codes" + weather.icon + ".png";
     humidity.innerHTML = weather.humidity;
@@ -72,10 +74,11 @@ window.onload = function () {
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
 
-    //==========
+
+    // ==========
     if (navigator.geolocation) {
         var showPosition = function (position) {
-            updateByGeo(position.coords.latitude, position.coords.longitude);
+            weatherAsk(position.coords.latitude, position.coords.longitude);
         };
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -87,13 +90,13 @@ window.onload = function () {
 
 //=======
 
-function updateByGeo(lat, lon) {
-    var url = "http://api.openweathermap.org/data/2.5/weather?" +
-        "lat=" + lat +
-        "&lon=" + lon +
-        "&APPID=" + APPID;
-    sendRequest(url);
-}
+// function updateByGeo(lat, lon) {
+//     var url = "http://api.openweathermap.org/data/2.5/weather?" +
+//         "lat=" + lat +
+//         "&lon=" + lon +
+//         "&APPID=" + APPID;
+//     sendRequest(url);
+// }
 
 
 function updateByCityName(cityName) {
@@ -104,12 +107,18 @@ function updateByCityName(cityName) {
 }
 
 
-// function K2F(k) {
-//     return Math.round(k * (9 / 5) - 459.67);
-// }
 
-// function K2C(k) {
-//     return Math.round(k - 273.15);
-// }
 
+var button = document.getElementById("button");
+var input = document.getElementById("city");
+// button.oncliick = weatherAsk;
+button.addEventListener("click",weatherAsk);
+function weatherAsk(){
+    var url ="api + input.value() + APPID";
+ ;
+    // sendRequest(url);
+   
+}
+
+console.log(url)
 module.exports={update};
