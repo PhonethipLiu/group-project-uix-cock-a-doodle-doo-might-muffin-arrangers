@@ -1,0 +1,70 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+
+// Color Variables
+$colorA: #C63D0F;
+$colorB: #3B3738;
+$colorC: #FDF3E7;
+$colorD: #7E8F7C;
+$colorE: #EB7118;
+$colorF: #DDCEC4;
+$colorG: #7EAB93;
+
+
+//Font Variables
+$font1: 'Roboto', sans-serif;
+
+//Main Elements
+
+html {
+    background: linear-gradient($colorB, $colorD);
+}
+
+header {
+    grid-row-start: 1;
+    width: 100%;
+    height: 100px;
+}
+
+body {
+    margin: 0;
+    margin-top: 0;
+    min-height: 100%;
+}
+
+footer {
+    background-color: $colorB;
+    grid-row-start: 3;
+    color: white;
+}
+
+//Grids
+#site--grid {
+    display: grid;
+    grid-template-rows: 15% 70% 15%
+}
+
+
+//other
+
+#main--h1 {
+    color: white;
+    text-align: center;
+    font-family: $font1;
+}
+
+#footer--cred {
+    list-style: none;
+    text-align: center;
+}
+
+#footer--cred li {
+    display: inline-block;
+}
+
+#footer--cred li a {
+    color: white;
+}
+
+
