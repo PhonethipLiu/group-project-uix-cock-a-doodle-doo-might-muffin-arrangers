@@ -9,17 +9,17 @@ let firebase = require("firebase/app"), //lets all these variables represent all
 require("firebase/auth");  //what is this requiring??
 require("firebase/database");  //what is this requiring??
 
-var config = {
-    apiKey: fbData.apiKey,
-    authDomain: fbData.authDomain,
-    databaseURL: fbData.databaseURL
-};
+// var config = {
+//     apiKey: fbData.apiKey,
+//     authDomain: fbData.authDomain,
+//     databaseURL: fbData.databaseURL
+// };
 
 
-firebase.getFBsettings = function () {
-    console.log("getFBsettings", config);
-    return config;
-};
+// firebase.getFBsettings = function () {
+//     console.log("getFBsettings", config);
+//     return config;
+// };
 
-firebase.initializeApp(config); //what is this function?
+// firebase.initializeApp(config); //what is this function?
 module.exports = firebase;
