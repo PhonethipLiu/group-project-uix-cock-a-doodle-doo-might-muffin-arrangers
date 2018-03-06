@@ -3,27 +3,10 @@
 let $ = require('../lib/node_modules/jquery');
 console.log("main js here");
 
-let meetUps = "https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=10&page=10&key=742a785d27225b161f1072604e5e3a27";
-
-let data = "";
-
-function getMeetup(data){
-    return $.ajax({
-        url: meetUps,
-        type: "json",
-    })
-    .then((data) => {
-        return data;
-    });
-}
-getMeetup(meetUps);
-console.log(data);
-console.log("main js here");
-
-var weather_load=require("./weather_load");
+// var weather_load=require("./weather_load");
 
 
-let user = require("./user");
+// let user = require("./user");
 
 // API key: 511e64b5fdc44764af3517769a250375 //
 
@@ -31,8 +14,8 @@ let user = require("./user");
 
 // this code works also but grunt doesn't like that Request is not defined //
 
-var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=us&' + 'apiKey=511e64b5fdc44764af3517769a250375';
+// var url = 'https://newsapi.org/v2/top-headlines?' +
+//           'country=us&' + 'apiKey=511e64b5fdc44764af3517769a250375';
 
 
 // var req = new request(url);
