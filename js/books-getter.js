@@ -1,19 +1,13 @@
 "use strict";
 
+let $ = require("jquery");
+
 // Link to books search API; no API key needed
 const url = "https://openlibrary.org/dev/docs/api/search.json";
 
 let booksGetter = () => {
-    return new Promise((resolve, reject) => {
-        $.ajax({
-            url: url
-        })
-        .done(data => {
-            resolve(data);
-        })
-        .fail(error => {
-            reject(error);
-        });
+    return $.ajax({
+    url: url
     });
 };
 
