@@ -4,6 +4,8 @@ let bookSearch = require("./books-getter");
 
 console.log("main js here");
 
+var weather_load=require("./weather_load");
+
 
 let user = require("./user");
 
@@ -16,7 +18,9 @@ let user = require("./user");
 var url = 'https://newsapi.org/v2/top-headlines?' +
           'country=us&' + 'apiKey=511e64b5fdc44764af3517769a250375';
 
-// var req = new Request(url);
+
+// var req = new request(url);
+
 // fetch(req)
 //     .then(function(response) {
 //         console.log(response.json());
@@ -59,4 +63,3 @@ var url = 'https://newsapi.org/v2/top-headlines?' +
 //     });
 
 // PH == jQuery option //
-
