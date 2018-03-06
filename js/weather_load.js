@@ -115,10 +115,10 @@ var input = document.getElementById("city");
 button.addEventListener("click",weatherAsk);
 function weatherAsk(){
     var url ="api + input.value() + APPID";
- ;
+ 
     // sendRequest(url);
    
 }
 
-console.log(url)
+// console.log(url);
 module.exports={update};
