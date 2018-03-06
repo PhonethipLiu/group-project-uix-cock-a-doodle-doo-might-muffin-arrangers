@@ -1,5 +1,5 @@
 "use strict";
-
+console.log("ajax call");
 let $ = require('../lib/node_modules/jquery');
 
 
@@ -33,3 +33,5 @@ getMeetup(meetUps)
 .then((data) => {
     console.log(data);
 });
+
+module.exports = { getMeetup };

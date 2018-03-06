@@ -2,6 +2,7 @@
 
 let $ = require('../lib/node_modules/jquery');
 console.log("main js here");
+let meetUps = require('./ajaxCall');
 
 // var weather_load=require("./weather_load");
 
