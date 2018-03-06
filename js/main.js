@@ -2,7 +2,7 @@
 
 console.log("main js here");
 
-var weather_load=require("./weather_load");
+var weather_load = require("./weather_load");
 
 // let user = require("./user");
 
