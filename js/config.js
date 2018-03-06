@@ -3,7 +3,7 @@
 console.log("config.js here");  //Says it's here
 
 let firebase = require("firebase/app"), //lets all these variables represent all that stuff
-    fb = require("./fb-key"),
+    fb = require("./apiKeys"),
     fbData = fb();  //what is this function??
 
 require("firebase/auth");  //what is this requiring??
@@ -21,5 +21,5 @@ firebase.getFBsettings = function () {
     return config;
 };
 
-firebase.initializeApp(config);
+firebase.initializeApp(config); //what is this function?
 module.exports = firebase;
