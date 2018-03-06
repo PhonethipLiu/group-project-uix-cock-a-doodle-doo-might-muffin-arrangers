@@ -3,6 +3,8 @@
 console.log("main js here");
 
 
+let user = require("./user");
+
 // API key: 511e64b5fdc44764af3517769a250375 //
 
 // ***** code from News Api from https://newsapi.org/docs/get-started#top-headlines **** //
@@ -10,13 +12,13 @@ console.log("main js here");
 // this code works also but grunt doesn't like that Request is not defined //
 
 var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=us&'+ 'apiKey=511e64b5fdc44764af3517769a250375';
+          'country=us&' + 'apiKey=511e64b5fdc44764af3517769a250375';
 
-var req = new Request(url);
-fetch(req)
-    .then(function(response) {
-        console.log(response.json());
-    });
+// var req = new Request(url);
+// fetch(req)
+//     .then(function(response) {
+//         console.log(response.json());
+//     });
 
 
 // ***** THIP code that works **** //
