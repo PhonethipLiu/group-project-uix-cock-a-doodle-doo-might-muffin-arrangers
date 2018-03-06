@@ -1,9 +1,8 @@
 "use strict";
 
 console.log("main js here");
-<<<<<<< HEAD
+
 var weather_load=require("./weather_load");
-=======
 
 
 // API key: 511e64b5fdc44764af3517769a250375 //
@@ -59,4 +58,4 @@ fetch(req)
 
 // PH == jQuery option //
 
->>>>>>> d06266cfb4a37019a9960b4884b8d5bdc827f9cc
+ d06266cfb4a37019a9960b4884b8d5bdc827f9cc
