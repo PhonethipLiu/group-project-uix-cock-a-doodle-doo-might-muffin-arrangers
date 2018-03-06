@@ -5,6 +5,7 @@ console.log("main js here");
 
 // var weather_load=require("./weather_load");
 
+// let user = require("./user");
 
 // let user = require("./user");
 
@@ -62,3 +63,5 @@ console.log("main js here");
 //     });
 
 // PH == jQuery option //
+let news = require("./news-Getter");
+

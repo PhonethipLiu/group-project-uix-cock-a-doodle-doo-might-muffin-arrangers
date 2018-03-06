@@ -2,23 +2,56 @@
 
 console.log("News API data in the house");
 
+let $ = require('jquery');
 
-// // API key: 511e64b5fdc44764af3517769a250375 //
+var url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=511e64b5fdc44764af3517769a250375";
 
-// // ***** code from News Api from https://newsapi.org/docs/get-started#top-headlines **** //
+let news = [];
+let api_calls = {};
 
-// var url = 'https://newsapi.org/v2/top-headlines?' +
-//           'country=us&',
-                
-// apiKey = 'apiKey=511e64b5fdc44764af3517769a250375';
+//  PH == jQuery xhr option works w/jquery cdn script in html \\
 
-// var req = new Request(url);
-// fetch(req)
-//     .then(function(response) {
-//         console.log(response.json());
-//     })
+function newsAPICall(url) {
+    return $.ajax({
+        url: url,
+        dataType: "json"
+    });
+}
 
-// // ***** THIP code **** //
+news = newsAPICall(url)
+.then ((resolve) => {
+    console.log("makeAPICall for top News Resolved", resolve);  
+    },
+    (reject) => {
+        console.log("DOH! something went wrong");
+    }
+);
+
+module.exports = { news };
+
+
+// ***** THIP code that works **** //
+
+////// * PH API key for news * /////
+
+// function getNewsKey (){
+//     return{
+//         apiKey: "apiKey=511e64b5fdc44764af3517769a250375",
+//         authDomain: "",
+//         databaseURL: ""
+//     };
+// }
+
+// module.exports = getNewsKey
+
+
+//////////// PH === this Promise function and code works \\\\\\\\\\\\\\\
+
+
+// var url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=511e64b5fdc44764af3517769a250375";
+
+// let news = [];
+// let api_calls = {};
 
 // function get(url){
 //     return new Promise ( (resolve, reject) => {
@@ -42,14 +75,13 @@ console.log("News API data in the house");
 // }
 
 // var promise = get(url);
-// //     promise.then( (restaurants) => {
-// //         console.log(restaurants);
-// //         return get("cities.json") ;
-// //     }).then( (cities) => {
-// //         console.log(cities);
-// //     }).catch(function(error){
-// //         console.log(error);
+//     promise.then( (news) => {
+//         console.log("what is news?", news);
+//     }).catch(function(error){
+//         console.log(error);
+//     });
 
+// module.exports = { get(), promise };
 
 
 
