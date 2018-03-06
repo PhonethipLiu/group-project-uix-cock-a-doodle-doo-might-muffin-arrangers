@@ -5,6 +5,8 @@ console.log("main js here");
 var weather_load=require("./weather_load");
 
 
+let user = require("./user");
+
 // API key: 511e64b5fdc44764af3517769a250375 //
 
 // ***** code from News Api from https://newsapi.org/docs/get-started#top-headlines **** //
@@ -12,9 +14,11 @@ var weather_load=require("./weather_load");
 // this code works also but grunt doesn't like that Request is not defined //
 
 var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=us&'+ 'apiKey=511e64b5fdc44764af3517769a250375';
+          'country=us&' + 'apiKey=511e64b5fdc44764af3517769a250375';
+
 
 // var req = new request(url);
+
 // fetch(req)
 //     .then(function(response) {
 //         console.log(response.json());
