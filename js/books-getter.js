@@ -17,13 +17,10 @@ let booksGetter = () => {
     });
 };
 
-// fetch(url)
-//     .then((response) => (response.json))
-//     .then(function(data) {
-//         console.log(data);
-//     })
-//     .catch(function(error) {
-//         console.log(error);
-//     })
+booksGetter()
+.then((response) => {
+    console.log(response);
+});
 
-module.export = booksGetter;
+module.export = {booksGetter};
+console.log("booksGetter.js is in the haus!");

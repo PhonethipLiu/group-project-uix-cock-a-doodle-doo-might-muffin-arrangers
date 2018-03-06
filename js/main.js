@@ -1,5 +1,7 @@
 "use strict";
 
+let bookSearch = require("./books-getter");
+
 console.log("main js here");
 
 
@@ -12,11 +14,11 @@ console.log("main js here");
 var url = 'https://newsapi.org/v2/top-headlines?' +
           'country=us&'+ 'apiKey=511e64b5fdc44764af3517769a250375';
 
-var req = new Request(url);
-fetch(req)
-    .then(function(response) {
-        console.log(response.json());
-    });
+// var req = new Request(url);
+// fetch(req)
+//     .then(function(response) {
+//         console.log(response.json());
+//     });
 
 
 // ***** THIP code that works **** //
