@@ -5,7 +5,8 @@ console.log("weather");
 // 
 var weather;
 var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
-var APPID ='7c6212572dc00aca5008de2575471183&units=imperial';
+var APPID ='7c6212572dc00aca5008de2575471183';
+var units="metric";
 var temp;
 var loc;
 var icon;
@@ -24,6 +25,19 @@ function update(weather) {
     loc.innerHTML = weather.location;
     temp.innerHTML = weather.temp;
     // console.log(icon.src);
+}
+
+
+var button = document.getElementById("button");
+var input = document.getElementById("city");
+// button.oncliick = weatherAsk;
+console.log("input",input);
+button.addEventListener("click", weatherAsk);
+function weatherAsk() {
+    var url = `${api}${input.value}&${APPID}${units}`;
+console.log(url);
+    // sendRequest(url);
+
 }
 
 function sendRequest(url) {
@@ -107,18 +121,6 @@ function updateByCityName(cityName) {
 }
 
 
-
-
-var button = document.getElementById("button");
-var input = document.getElementById("city");
-// button.oncliick = weatherAsk;
-button.addEventListener("click",weatherAsk);
-function weatherAsk(){
-    var url ="api + input.value() + APPID";
- 
-    // sendRequest(url);
-   
-}
 
 // console.log(url);
 module.exports={update};
