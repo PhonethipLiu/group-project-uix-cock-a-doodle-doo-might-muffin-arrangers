@@ -1,8 +1,11 @@
 "use strict";
 
-let $ = require('../lib/node_modules/jquery');
 console.log("main js here");
+
+let $ = require('../lib/node_modules/jquery');
+let news = require("./news-Getter");
 let meetUps = require('./ajaxCall');
+let bookSearch = require("./books-getter");
 
 // var weather_load=require("./weather_load");
 
@@ -64,5 +67,4 @@ let meetUps = require('./ajaxCall');
 //     });
 
 // PH == jQuery option //
-let news = require("./news-Getter");
 
