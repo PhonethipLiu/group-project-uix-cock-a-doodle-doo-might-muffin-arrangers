@@ -24,46 +24,6 @@ function update(weather) {
     // console.log(icon.src);
 }
 
-window.onload = function () {
-    temp = document.getElementById("temperature");
-    loc = document.getElementById("location");
-    icon = document.getElementById("icon");
-    humidity = document.getElementById("humidity");
-    wind = document.getElementById("wind");
-    direction = document.getElementById("direction");
-
-    //==========
-    if (navigator.geolocation) {
-        var showPosition = function (position) {
-            updateByGeo(position.coords.latitude, position.coords.longitude);
-        };
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        var cityName= window.prompt("Could not discover your location. What is your city code?");
-        updateByCityName(cityName);
-    }
-
-};
-
-//=======
-
-function updateByGeo(lat, lon) {
-    var url = "http://api.openweathermap.org/data/2.5/weather?" +
-        "lat=" + lat +
-        "&lon=" + lon +
-        "&APPID=" + APPID;
-    sendRequest(url);
-}
-
-
-function updateByCityName(cityName) {
-    var url = "http://api.openweathermap.org/data/2.5/weather?" +
-        "cityName=" + cityName +
-        "&APPID=" + APPID;
-    sendRequest(url);
-}
-
-
 function sendRequest(url) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -103,6 +63,46 @@ function degreesToDirection(degrees) {
     return "N";
 
 }
+
+window.onload = function () {
+    temp = document.getElementById("temperature");
+    loc = document.getElementById("location");
+    icon = document.getElementById("icon");
+    humidity = document.getElementById("humidity");
+    wind = document.getElementById("wind");
+    direction = document.getElementById("direction");
+
+    //==========
+    if (navigator.geolocation) {
+        var showPosition = function (position) {
+            updateByGeo(position.coords.latitude, position.coords.longitude);
+        };
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        var cityName = window.prompt("Could not discover your location. What is your city code?");
+        updateByCityName(cityName);
+    }
+
+};
+
+//=======
+
+function updateByGeo(lat, lon) {
+    var url = "http://api.openweathermap.org/data/2.5/weather?" +
+        "lat=" + lat +
+        "&lon=" + lon +
+        "&APPID=" + APPID;
+    sendRequest(url);
+}
+
+
+function updateByCityName(cityName) {
+    var url = "http://api.openweathermap.org/data/2.5/weather?" +
+        "cityName=" + cityName +
+        "&APPID=" + APPID;
+    sendRequest(url);
+}
+
 
 // function K2F(k) {
 //     return Math.round(k * (9 / 5) - 459.67);
