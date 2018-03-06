@@ -8,17 +8,40 @@ console.log("News API data in the house");
 // // ***** code from News Api from https://newsapi.org/docs/get-started#top-headlines **** //
 
 // var url = 'https://newsapi.org/v2/top-headlines?' +
-//           'country=us&',
+//           'country=us&';
                 
-// apiKey = 'apiKey=511e64b5fdc44764af3517769a250375';
+// var newsKey = 'apiKey=511e64b5fdc44764af3517769a250375';
 
 // var req = new Request(url);
 // fetch(req)
 //     .then(function(response) {
-//         console.log(response.json());
-//     })
+//         console.log("this is what it response is", response.json());
+//     });
 
-// // ***** THIP code **** //
+
+
+// ***** THIP code that works **** //
+
+////// * PH API key for news * /////
+
+// function getNewsKey (){
+//     return{
+//         apiKey: "apiKey=511e64b5fdc44764af3517769a250375",
+//         authDomain: "",
+//         databaseURL: ""
+//     };
+// }
+
+// module.exports = getNewsKey
+
+
+//////////// PH === this Promise function and code works \\\\\\\\\\\\\\\
+
+
+// var url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=511e64b5fdc44764af3517769a250375";
+
+// let news = [];
+// let api_calls = {};
 
 // function get(url){
 //     return new Promise ( (resolve, reject) => {
@@ -42,16 +65,34 @@ console.log("News API data in the house");
 // }
 
 // var promise = get(url);
-// //     promise.then( (restaurants) => {
-// //         console.log(restaurants);
-// //         return get("cities.json") ;
-// //     }).then( (cities) => {
-// //         console.log(cities);
-// //     }).catch(function(error){
-// //         console.log(error);
+//     promise.then( (news) => {
+//         console.log("what is news?", news);
+//     }).catch(function(error){
+//         console.log(error);
+//     });
+
+// module.exports = { get(), promise };
 
 
+//  PH == jQuery xhr option works w/jquery cdn script in html \\
 
+function newsAPICall(url) {
+    return $.ajax({
+        url: url,
+        dataType: "json"
+    });
+}
+
+newsAPICall('https://newsapi.org/v2/top-headlines?country=us&apiKey=511e64b5fdc44764af3517769a250375')
+.then ((resolve) => {
+    console.log("makeAPICall for top News Resolved", resolve);  
+    },
+    (reject) => {
+        console.log("DOH! something went wrong");
+    }
+);
+
+module.exports = { newsAPICall };
 
 
 
