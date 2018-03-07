@@ -2,7 +2,8 @@
 
 console.log("user.js here");
 
-let firebase = require("./config"),
+"use strict";
+let firebase = require("./fb-config"),
     provider = new firebase.auth.GoogleAuthProvider(),
     currentUser = null;
 
@@ -12,7 +13,7 @@ function logInGoogle() {
 }
 
 function logOut() {
-    return firebase.auth().signOut();
+    return firebase.auth().signOut(provider);
 }
 
 function setUser(val) {
@@ -23,7 +24,7 @@ function getUser() {
     return currentUser;
 }
 
-firebase.auth().onAuthStateChanged(function (user) {  //.onAuthStateChanged is a firebase method from firebase
+firebase.auth().onAuthStateChanged(function (user) {
     console.log("onAuthStateChanged", user);
     if (user) {
         currentUser = user.uid;

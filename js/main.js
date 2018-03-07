@@ -2,11 +2,12 @@
 
 console.log("main js here");
 
-let $ = require('jquery');
-let news = require("./news-Getter");
-let meetUps = require('./ajaxCall');
-let bookSearch = require("./books-getter");
-let weather=require("./weather_load");
+let $ = require('jquery'),
+news = require("./news-Getter"),
+meetUps = require('./ajaxCall'),
+bookSearch = require("./books-getter"),
+weather=require("./weather_load"),
+user=require("./user");
 // var weather_load=require("./weather_load");
 
 // let user = require("./user");
