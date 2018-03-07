@@ -3,18 +3,13 @@
 let $ = require("jquery");
 
 // Link to books search API; no API key needed
-const url = "https://openlibrary.org/dev/docs/api/search.json";
 
-let booksGetter = () => {
+let booksGetter = (query) => {
+    let url = `https://openlibrary.org/search.json?title=${query}&limit=10`;
     return $.ajax({
-    url: url
+    url: url,
+    dataType: "json"
     });
 };
 
-booksGetter()
-.then((response) => {
-    console.log(response);
-});
-
-module.export = {booksGetter};
-console.log("booksGetter.js is in the haus!");
+module.exports = {booksGetter};
