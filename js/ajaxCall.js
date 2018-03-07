@@ -1,6 +1,6 @@
 "use strict";
 console.log("ajax call");
-let $ = require('../lib/node_modules/jquery');
+let $ = require('jquery');
 
 
 let meetUps = "https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=10&page=10&key=742a785d27225b161f1072604e5e3a27";
