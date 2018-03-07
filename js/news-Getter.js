@@ -8,6 +8,7 @@ let $ = require('jquery');
 var url = "https://newsapi.org/v2/top-headlines?country=us&";
 // var newsApiKey = "511e64b5fdc44764af3517769a250375";
 
+
 let news = [];
 let api_calls = {};
 
@@ -36,5 +37,5 @@ news = newsAPICall(url)
     }
 );
 
-module.exports = { news };
 
+module.exports = { news };
