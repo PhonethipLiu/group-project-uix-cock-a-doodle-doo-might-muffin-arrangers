@@ -6,6 +6,7 @@ let $ = require('jquery');
 
 var url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=511e64b5fdc44764af3517769a250375";
 
+
 let news = [];
 let api_calls = {};
 
@@ -26,8 +27,6 @@ news = newsAPICall(url)
         console.log("DOH! something went wrong");
     }
 );
-
-module.exports = { news };
 
 
 // ***** THIP code that works **** //
@@ -83,7 +82,4 @@ module.exports = { news };
 
 // module.exports = { get(), promise };
 
-
-
-
-
+module.exports = { news };
