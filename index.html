@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,48 +11,59 @@
         <link rel="stylesheet" type="text/css" media="screen" href="lib/node_modules/bootstrap/dist/css/bootstrap-grid.min.css" />
         <!-- local css -->
         <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-        
     </head>
+
 
     <body id="site--grid">
         
         <header>
             <h1 id="main--h1">COCK-A-DOODLE-DO DASHBOARD</h1>
         </header>
-
-
+        
+        
         <main>
+ 
 
             <div id="weather--div" class="containers">
+                <!--input start-->
+            <div id="searching">
+                <input type="text" value="city" id="city"></input>
+                <input type="submit" value="submit" id="button"></button>
+            </div>   
+                <!--input ends-->
                 <div class="weather-app">
                     <div class="left">
                         <div class="temperature">
                             <span id="temperature">0</span>&deg;</div>
-                        <div class="location">
-                            <span id="location">Unknown</span>
+                            <div class="location">
+                                <span id="location">Unknown</span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="top">
+                                <img id="icon" width="75px" src="imgs/codes/200.png" />
+                            </div>
+                            
+                            <div class="bottom">
+                                
+                                <div class="humidity">
+                                    <img src="imgs/humidity.png" alt="humid" height="16px" />
+                                    <span id="humidity">0</span>%
+                                </div>
+                                
+                                <div class="wind">
+                                    <span id="wind">0</span> mph
+                                    <span id="direction">N</span>
+                                </div>
+                                
+                                
+                            </div>
                         </div>
                     </div>
-                    <div class="right">
-                        <div class="top">
-                            <img id="icon" width="75px" src="imgs/codes/200.png" />
-                        </div>
-                
-                        <div class="bottom">
-                
-                            <div class="humidity">
-                                <img src="imgs/humidity.png" alt="humid" height="16px" />
-                                <span id="humidity">0</span>%
-                            </div>
-                
-                            <div class="wind">
-                                <span id="wind">0</span> mph
-                                <span id="direction">N</span>
-                            </div>
-                
-                
-                        </div>
-                    </div>
+                    
                 </div>
+        </html>
+
 
             </div>
             <div id="news--div" class="containers"></div>
@@ -71,10 +83,13 @@
             </ul>
 
         </footer>
+<<<<<<< HEAD
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
         <script type='text/javascript' src='dist/app.js'></script>
     </body>
+=======
+>>>>>>> master
 
 <!-- jquery-3 cdn link -->
     <!-- <script
@@ -93,3 +108,4 @@
     <script src="dist/app.js"></script>
 </body>
 </html>
+
