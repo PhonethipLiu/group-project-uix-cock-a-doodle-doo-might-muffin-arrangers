@@ -6,10 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Might Muffin Organizer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="google-signin-client_id" content="879640834157 - ac4tg28pbqj611mt0pv05reh9ug4dbud.apps.googleusercontent.com">
         <!-- Bootstrap css -->
         <link rel="stylesheet" type="text/css" media="screen" href="lib/node_modules/bootstrap/dist/css/bootstrap-grid.min.css" />
-        <!-- local css -->
+        
+
+<!-- local css -->
         <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     </head>
 
@@ -17,65 +19,68 @@
     <body id="site--grid">
         
         <header>
+            <h1 id="main--h1">COCK-A-DOODLE-DO DASHBOARD</h1>
+        </header>
+        
+        
+        <main>
+ 
+         <!--google users-->
 
-            <div id="welcome--div">
-                <h1>Hi, Brenda!</h1>
-                <button>Edit Profile</button>
-            </div>
-
-            <div id="weather--div">
-                <!--input start-->
-                <div id="searching">
-                    <input type="text" value="city" id="city"></input>
-                    <input type="submit" value="submit" id="button">
-                    </button>
-                </div>
+        <!-- <h1>hello
+            <span id="clintName"></span>
+        </h1>
+        <img id="clientPhotos" src=""> -->
+         <!-- <div id="auth-btn" class="g-signin2" data-onsuccess="onSignIn"></div> -->
+        <button id="login" type="button" item-width="200"height="120">Sign in with Google</button>
+     
+        </div> 
+         <!--google users-->
+            <div id="weather--div" class="containers">
+                <!-- input start -->
+            <div id="searching">
+                <input type="text" value="city" id="city"></input>
+                <input type="submit" value="submit" id="button"></button>
+            </div>   
                 <!--input ends-->
                 <div class="weather-app">
                     <div class="left">
                         <div class="temperature">
                             <span id="temperature">0</span>&deg;</div>
-                        <div class="location">
-                            <span id="location">Unknown</span>
+                            <div class="location">
+                                <span id="location">Unknown</span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="top">
+                                <img id="icon" width="75px" src="imgs/codes/200.png" />
+                            </div>
+                            
+                            <div class="bottom">
+                                
+                                <div class="humidity">
+                                    <img src="imgs/humidity.png" alt="humid" height="16px" />
+                                    <span id="humidity">0</span>%
+                                </div>
+                                
+                                <div class="wind">
+                                    <span id="wind">0</span> mph
+                                    <span id="direction">N</span>
+                                </div>
+                                
+                                
+                            </div>
                         </div>
                     </div>
-                    <div class="right">
-                        <div class="top">
-                            <img id="icon" width="75px" src="imgs/codes/200.png" />
-                        </div>
-            
-                        <div class="bottom">
-            
-                            <div class="humidity">
-                                <img src="imgs/humidity.png" alt="humid" height="16px" />
-                                <span id="humidity">0</span>%
-                            </div>
-            
-                            <div class="wind">
-                                <span id="wind">0</span> mph
-                                <span id="direction">N</span>
-                            </div>
-            
-            
-                        </div>
-                    </div>
+                    
                 </div>
-            
+        </html>
+
+
             </div>
-
-            <div id="logo-div">
-                <img src="imgs/cock-a-doodle.png" alt="logo" id="logo--img"/>
-                <h1 id="main--h1">DOO<br/>DASHBOARD</h1>
-            </div>
-
-        </header>
-        
-        
-        <main>
-
-            <div id="news--div" class="containers"><h3 class="col-h3">NEWS</h3><button class="my-btn">MY NEWS</button></div>
-            <div id="meetups--div" class="containers"><h3 class="col-h3">MEETUPS</h3><button class="my-btn">MY MEETUPS</button></div>
-            <div id="books--div" class="containers"><h3 class="col-h3">BOOKS</h3><button class="my-btn">MY BOOKS</button></div>
+            <div id="news--div" class="containers"></div>
+            <div id="meetups--div" class="containers"></div>
+            <div id="books--div" class="containers"></div>
            
         </main>
                 
@@ -83,19 +88,13 @@
         <footer>
 
             <ul id="footer--cred">
-
                 <li><a href="https://newsapi.org/">news.api</a></li>
                 <li><a href="url">weather.api</a></li>
                 <li><a href="url">meetups.api</a></li>
                 <li><a href="url">books.api</a></li>
-
             </ul>
 
         </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script type='text/javascript' src='dist/app.js'></script>
-    </body>
 
 <!-- jquery-3 cdn link -->
     <!-- <script
@@ -111,7 +110,7 @@
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
    -->
 <!-- local js -->
-<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="dist/app.js"></script>
 </body>
 </html>

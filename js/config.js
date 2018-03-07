@@ -4,7 +4,7 @@ console.log("config.js here");  //Says it's here
 
 
 let firebase = require("firebase/app"),
-    fb = require("./fb-key"),
+    fb = require("./apiKeys"),
     fbData = fb();
 
 require("firebase/auth");
@@ -23,4 +23,7 @@ firebase.getFBsettings = function () {
 };
 
 firebase.initializeApp(config);
-module.exports = firebase;;
+
+
+
+module.exports = firebase;

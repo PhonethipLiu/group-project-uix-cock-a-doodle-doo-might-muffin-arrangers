@@ -1,71 +1,52 @@
 "use strict";
-
 console.log("main js here");
-
-let $ = require('jquery'),
-news = require("./news-Getter"),
-meetUps = require('./ajaxCall'),
-bookSearch = require("./books-getter"),
-weather=require("./weather_load"),
-user=require("./user");
-// var weather_load=require("./weather_load");
-
-// let user = require("./user");
-
-// let user = require("./user");
-
-// API key: 511e64b5fdc44764af3517769a250375 //
-
-// ***** code from News Api from https://newsapi.org/docs/get-started#top-headlines **** //
-
-// this code works also but grunt doesn't like that Request is not defined //
-
-// var url = 'https://newsapi.org/v2/top-headlines?' +
-//           'country=us&' + 'apiKey=511e64b5fdc44764af3517769a250375';
+  let $ = require('jquery'),
+       news = require("./news-Getter"),
+       db = require('./ajaxCall'),
+       bookSearch = require("./books-getter"),
+       weather=require("./weather_load"),
+       user=require("./user");
+       
+        
 
 
-// var req = new request(url);
-
-// fetch(req)
-//     .then(function(response) {
-//         console.log(response.json());
-//     });
 
 
-// ***** THIP code that works **** //
+        function dbMaster() {
+        let userObj = buildUserObj();
+        db.addUser(userObj);
+                }
 
-// var url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=511e64b5fdc44764af3517769a250375";
+        $("#login").click(function () {
+            // console.log("clicked auth");
+            user.logInGoogle()
+                .then((result) => {
+                    // console.log("result from login", result.user.uid);
+                    user.setUser(result.user.uid);
+                    dbMaster();
+                });
 
-// let news = [];
-// let api_calls = {};
 
-// function get(url){
-//     return new Promise ( (resolve, reject) => {
-//         var xhr = new XMLHttpRequest();
-//         xhr.open("GET", url);
+                function buildUserObj() {
+                    let userObj = {
+                        // We can use the same variable or reference that we use to display the name at the top of the page
+                        name: "",
+                        location: "",
+                        uid: user.getUser()
+                        
+                    };
+                    console.log("userObj", userObj);
+                    return userObj;
+                }
 
-//         xhr.onload = function() {
-//             if (xhr.status == 200){
-//                 resolve(JSON.parse(xhr.response));
-//             } else {
-//                 reject(Error(xhr.statusText));
-//             }
-//         };
-//         // handles network errors
-//         xhr.onerror = function(){
-//             reject(Error(xhr.statusText));
-//         };
-//         //make request
-//         xhr.send();
-//     });    
-// }
 
-// var promise = get(url);
-//     promise.then( (news) => {
-//         console.log("what is news?", news);
-//     }).catch(function(error){
-//         console.log(error);
-//     });
+       
 
-// PH == jQuery option //
+        });
+
+
+
+
+
+
 
