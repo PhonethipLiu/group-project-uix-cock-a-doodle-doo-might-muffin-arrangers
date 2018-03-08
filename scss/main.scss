@@ -87,6 +87,7 @@ main {
 .col-h3,
 .my-btn {
     margin: .5rem;
+    // grid-row-start: 1;
 }
 
 ol.list {
@@ -150,6 +151,13 @@ p.list-summary {
 
 #logo--div {
     grid-column-start: 3;
+}
+
+#meetupListDiv {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 2;
+    grid-row-end: span 3;
 }
 
 #main--h1 {
