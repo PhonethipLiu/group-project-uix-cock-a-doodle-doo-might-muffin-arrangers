@@ -26,11 +26,12 @@ function outputNews(newsList) {
             var articles= newsList.articles;
             console.log("topNewsArticle", newsList);
             console.log("News data title:", articles[i].title + articles[i].description  + articles[i].source + articles[i].url );
-            populateNewsDiv.append(`<li class="list">
-            <h4 class="news-headline">${articles[i].title}</h4>
+            populateNewsDiv.append(`<li>
+            <h4 class="list-headline">${articles[i].title}</h4>
             <p>${articles[i].description}</p>
-            <footer class="news-footer"> Source: ${articles[i].source.name}</footer>
-            <a target="_blank" href="${articles[i].url}"> Read the article </a></li>`);
+            <footer class="list-footer"> Source: ${articles[i].source.name}</footer>
+            <a class="news-link" target="_blank" href="${articles[i].url}"> Read the article </a></li>
+            <button event="onClick()"> add </button>`);
             
         }
     }
