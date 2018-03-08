@@ -17,74 +17,44 @@
 
 
     <body id="site--grid">
-        
         <header>
             <h1 id="main--h1">COCK-A-DOODLE-DO DASHBOARD</h1>
         </header>
-        
-        
         <main>
- 
-         <!--google users-->
-
-        <!-- <h1>hello
-            <span id="clintName"></span>
-        </h1>
-        <img id="clientPhotos" src=""> -->
-         <!-- <div id="auth-btn" class="g-signin2" data-onsuccess="onSignIn"></div> -->
+        <!--google users-->
         <button id="login" type="button" item-width="200"height="120">Sign in with Google</button>
-     
-        </div> 
-         <!--google users-->
+        <!--google users-->
             <div id="weather--div" class="containers">
-                <!-- input start -->
-            <div id="searching">
+        <!-- input start -->
+           <div id="searching">
                 <input type="text" value="city" id="city"></input>
                 <input type="submit" value="submit" id="button"></button>
             </div>   
-                <!--input ends-->
-                <div class="weather-app">
-                    <div class="left">
-                        <div class="temperature">
-                            <span id="temperature">0</span>&deg;</div>
-                            <div class="location">
-                                <span id="location">Unknown</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="top">
-                                <img id="icon" width="75px" src="imgs/codes/200.png" />
-                            </div>
-                            
-                            <div class="bottom">
-                                
-                                <div class="humidity">
-                                    <img src="imgs/humidity.png" alt="humid" height="16px" />
-                                    <span id="humidity">0</span>%
-                                </div>
-                                
-                                <div class="wind">
-                                    <span id="wind">0</span> mph
-                                    <span id="direction">N</span>
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
+        <!--input ends-->
+        <!--weather input start-->
+            <div class="weather-app">
+               <div class="left">
+                 <div class="temperature">
+                    <span id="temperature">Unknown</span>&deg;</div>
+                       <div class="location"><span id="location">Unknown</span></div>
+                        <div class="date"><span id="date">country</span></div>
+                     </div>
+                       <div class="right">
+                       <div class="top"><img id="icon" width="75" src="imgs/codes/200.png"></div>
+                       <div class="bottom">
+                           <div class="humidity"><!-- <img src="imgs/humidity.png" alt="humid" height="16px" /> --><span id="humidity">0</span>%</div>
+                           <div class="wind"><span id="wind">0</span> mph<span id="direction">N</span></div>
+                      </div>
                     </div>
-                    
-                </div>
-        </html>
-
-
+                 </div>
+              </div>
             </div>
+           <!--weather end-->
             <div id="news--div" class="containers"></div>
             <div id="meetups--div" class="containers"></div>
             <div id="books--div" class="containers"></div>
            
         </main>
-                
-
         <footer>
 
             <ul id="footer--cred">
@@ -93,7 +63,6 @@
                 <li><a href="url">meetups.api</a></li>
                 <li><a href="url">books.api</a></li>
             </ul>
-
         </footer>
 
 <!-- jquery-3 cdn link -->

@@ -1,6 +1,8 @@
 "use strict";
 console.log("main js here");
-  let $ = require('jquery'),
+  
+
+       let $ = require('jquery'),
        news = require("./news-Getter"),
        db = require('./ajaxCall'),
        bookSearch = require("./books-getter"),
@@ -8,14 +10,8 @@ console.log("main js here");
        user=require("./user");
        
         
+let firebase;
 
-
-
-
-        function dbMaster() {
-        let userObj = buildUserObj();
-        db.addUser(userObj);
-                }
 
         $("#login").click(function () {
             // console.log("clicked auth");
@@ -25,26 +21,37 @@ console.log("main js here");
                     user.setUser(result.user.uid);
                     dbMaster();
                 });
-
-
+            function dbMaster() {
+                let userObj = buildUserObj();
+                db.addUser(userObj);
+            }
                 function buildUserObj() {
                     let userObj = {
                         // We can use the same variable or reference that we use to display the name at the top of the page
                         name: "",
                         location: "",
                         uid: user.getUser()
-                        
                     };
                     console.log("userObj", userObj);
                     return userObj;
                 }
+            });
 
-
-       
-
-        });
-
-
+            // Get a reference to the database service
+            var database = firebase.database();
+            // save the user's profile into Firebase so we can list users,
+            // use them in Security and Firebase Rules, and show profiles
+function buildUserObj(userId, name, email, imageUrl, uid) {
+                firebase.database().ref('users/' + userId).set({
+                    username: name,
+                    email: email,
+                    imageUrl:imageUrl,
+                    uid: user.getUser()
+                    //some more user data
+               
+              
+                });
+            }
 
 
 

@@ -6,7 +6,7 @@ let $ = require('jquery'),
     db=require("./apiKeys");
 
 function addUser(userObj) {
-    console.log("addUser", userObj);
+    // console.log("addUser", userObj);
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/users.json`,
         type: 'POST',

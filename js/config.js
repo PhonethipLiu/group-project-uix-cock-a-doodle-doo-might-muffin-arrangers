@@ -15,14 +15,13 @@ var config = {
     authDomain: fbData.authDomain,
     databaseURL: fbData.databaseURL
 };
-
+firebase.initializeApp(config);
 
 firebase.getFBsettings = function () {
     console.log("getFBsettings", config);
     return config;
 };
 
-firebase.initializeApp(config);
 
 
 

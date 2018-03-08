@@ -3,17 +3,10 @@
 console.log("user.js here");
 
 
-// createUserWithEmailAndPassword
 
-
-
-
-
-
-        // =====from Da the Boss=======
-        let firebase = require("./config"),
-            provider = new firebase.auth.GoogleAuthProvider(),
-            currentUser = null;
+       let firebase = require("./config"),
+        provider = new firebase.auth.GoogleAuthProvider(),
+        currentUser = null;
         // var googleUser = document.getElementById("auth-btn");
         // googleUser.addEventListener("click",logInGoogle);
         function logInGoogle() {

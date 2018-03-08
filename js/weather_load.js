@@ -1,8 +1,11 @@
 "use strict";
-console.log("weather");
+// console.log("weather");
 
 
-// 
+
+
+
+
 var weather;
 var api = 'http://api.openweathermap.org/data/2.5/weather?q=';
 var APPID ='7c6212572dc00aca5008de2575471183';
@@ -13,6 +16,7 @@ var icon;
 var humidity;
 var wind;
 var direction;
+var sys;
 let i;
 
 
@@ -25,10 +29,9 @@ function sendRequest(url) {
             weather.code = data.weather[0].id;
             weather.humidity = data.main.humidity;
             weather.wind = data.wind.speed;
-            /* NEW */
             weather.direction = degreesToDirection(data.wind.deg);
             weather.location = data.name;
-            /* NEW */
+            weather.sys =data.sys.country;
             weather.temp =(data.main.temp);
             update(weather);
         }
@@ -63,6 +66,7 @@ window.onload = function () {
     humidity = document.getElementById("humidity");
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
+    sys = document.getElementById("date");
 };
 
     function updateByCityName(cityName) {
@@ -84,7 +88,7 @@ window.onload = function () {
     }
 
     function update(weather) {
-        icon.src = "../imgs/codes" + weather.icon + ".png";
+        icon.src = "imgs/codes" + weather.icon+".png";
         humidity.innerHTML = weather.humidity;
         wind.innerHtml = weather.wind;
         direction.innerHTML = weather.direction;
