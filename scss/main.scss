@@ -72,7 +72,19 @@ main {
     margin: 1rem;
     min-width: 300px;
     padding: 1.7rem;
+}
 
+// BS --- books div
+#search-bar {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+#search-results {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 // PH --- div styling
