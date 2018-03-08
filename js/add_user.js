@@ -12,32 +12,20 @@ var firebase = require("./config");
 
 
 
-function addUser(userformObj) {
-    // console.log("addUser", userObj);
-    return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/users.json`,
-        dataType: 'POST',
-        data: JSON.stringify(userformObj),
-        dataType: 'json'
-    }).done((userID) => {
-        return userID;
-    });
-}
+// let hideLogButtons = (currentUser) => {
+//     // console.log('hideLogButtons function started');
+//     if (currentUser !== null) {
+//         $('#login').attr('hidden', true);
+//         $('#logout').removeAttr('hidden', true);
+//     } else if (currentUser === null) {
+//         // console.log('hiding logout button');
+//         $('#logout').attr('hidden', true);
+//         $('#login').removeAttr('hidden', true);
+//     }
+//     // console.log('hideLogButtons function ended');
 
-let hideLogButtons = (currentUser) => {
-    // console.log('hideLogButtons function started');
-    if (currentUser !== null) {
-        $('#login').attr('hidden', true);
-        $('#logout').removeAttr('hidden', true);
-    } else if (currentUser === null) {
-        // console.log('hiding logout button');
-        $('#logout').attr('hidden', true);
-        $('#login').removeAttr('hidden', true);
-    }
-    // console.log('hideLogButtons function ended');
-
-};
+// };
 
 
 
-module.exports = {addUser,hideLogButtons};
+// module.exports = {hideLogButtons};

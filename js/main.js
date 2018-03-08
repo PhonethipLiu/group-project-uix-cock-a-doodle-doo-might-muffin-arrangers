@@ -9,21 +9,19 @@ console.log("main js here");
        weather=require("./weather_load"),
        user=require("./user"),
        DOMbuild =require("./add_user"),      
-       firebase = require("./config");
-      
+       firebase = require("./config"),
+      interaction=require("./user-interaction");
 
 
 // Preparing the object to be posted to firebase
-function creatUserObj() {
+function createUserObj() {
     let userObj = {
-        // We can use the same variable or reference that we use to display the name at the top of the page
         name: "",
         location: "",
         uid: user.getUser()
     };
     console.log("userObj", userObj);
     return userObj;
-
 }
 
 //login//
@@ -33,25 +31,26 @@ $("#login").click(function () {
         .then((result) => {
             console.log("result from login", result.user.uid);
             user.setUser(result.user.uid);
-            DOMbuild.hideLogButtons(user.getUser());
-            dbMaster();
+            $("#login").addClass("d-none");
+            $("#userPic").removeClass("d-none").html(`<img src="${result.user.photoURL}" alt="${result.user.displayName} photo from Google" class="profPic rounded-circle">`);
+            console.log("login complete!");
+            sendToFirebase();
         });
+
+});
+         
+$("#logout").click(() => {
+    console.log("logout clicked");
+    user.logOut();
+    $("#userPic").addClass("d-none");
+    $("#login").removeClass("d-none");
+    $("#logout").addClass("d-none");
+    $("#secondaryLogin").removeClass("d-none");
 });
 
-            function dbMaster() {
-                let userObj = buildUserObj();
-                DOMbuild.addUser;
-            }
 
-            //logout//
-            $("#logout").click(function () {
-
-                console.log('clicked logout');
-       user.logOut();
-                DOMbuild.hideLogButtons(null);
-                // .then((user) => {
-
-                console.log("its da result", user.getUser());
-
-            });
-
+function sendToFirebase() {
+    let userBuild = createUserObj();
+    //need to add logic to not add to firebase if user is already in firebase by UID
+    user.addUser(userBuild);
+}    

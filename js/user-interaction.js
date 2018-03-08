@@ -1,15 +1,28 @@
 "use strict";
 
+let $ = require('jquery'),
+    news = require("./news-Getter"),
+    meetup = require('./ajaxCall'),
+    bookSearch = require("./books-getter"),
+    weather = require("./weather_load"),
+    user = require("./user"),
+    DOMbuild = require("./add_user"),
+    firebase = require("./config");
+   
 
 
 
-function addSong(songFormObj) {   //this method is to add data to firebase
-    return $.ajax({  // $ is used to call jquery
-        url: `${firebase.getFBsettings().databaseURL}/songs.json`,
-        type: 'POST',    // This tells firebase we plan to post data to the json file
-        data: JSON.stringify(songFormObj),
+function addUser(userObj) {  
+    return $.ajax({  
+        url: `${firebase.getFBsettings().databaseURL}/userInfo.json`,
+        type: 'POST',   
+        data: JSON.stringify(userObj),
         dataType: 'json'
-    }).done((songID) => {
-        return songID;
+    }).done((userID) => {
+        console.log("what is the new id?", userID);
+        return userID;
     });
 }
+
+
+module.exports= {addUser};
