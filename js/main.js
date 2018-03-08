@@ -15,5 +15,3 @@ booklist.search.captureInput();
 // var weather_load=require("./weather_load");
 // let user = require("./user");
 // let user = require("./user");
-
-

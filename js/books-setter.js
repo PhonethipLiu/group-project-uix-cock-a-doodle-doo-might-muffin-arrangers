@@ -3,17 +3,21 @@
 // Gets API call from "books-getter.js"
 const bookQuery = require("./books-getter");
 
+// Sets up "search" as an empty object
 let search = {};
 
+// This function captures the value typed into the search bar once the "enter" key is pressed
 search.captureInput = () => {
-    // Grabs the "search-bar" div
+    // Grabs the "search-bar" element
     const bookSearchBar = document.getElementById("search-bar");
     bookSearchBar.addEventListener("keyup", function(e) {
         if (e.keyCode === 13 && e.target.value != "")  {
-    // Takes user input and inserts it into a regular expression
+    // Takes user input and makes it lowercase
             let userInput = e.target.value.toLowerCase();
+            // Console logs whatever the user types in
             console.log(userInput);
             bookSearch(userInput);
+        // If the "enter" key is pressed, but there is no value entered, an alert is triggered
         } else if (e.keyCode === 13) {
                 window.alert("Please enter something to search for.");
         }
@@ -30,14 +34,21 @@ let bookSearch = (userInput) => {
     });
 };
 
+// This builds the list of books with their title, author, and the published year
 let bookDisplay = (arrayBooks) => {
+    // Console logs the array of books returned from the search
     console.log(arrayBooks);
     let searchResult = "";
     for (let i = 0; i < arrayBooks.length; i++) {
-        searchResult += `<img src="${arrayBooks[i].cover_i}"><img>`;
-        searchResult += `<h1>${arrayBooks[i].title}</h1>`;
-        searchResult += '<h3 class="lead text-info">By: ' + arrayBooks[i].author_name + '</h3>';
-        searchResult += '<p class="lead text-info">Published: ' + arrayBooks[i].first_publish_year + '</p>';
+        if (arrayBooks[i].isbn) {
+            let bookThumbnail = arrayBooks[i].isbn[0];
+            console.log("bookThumbnail", bookThumbnail);
+            searchResult += `<img src="http://covers.openlibrary.org/b/isbn/${bookThumbnail}-S.jpg">`;
+        }
+        searchResult += `<h4>${arrayBooks[i].title}</h4>`;
+        searchResult += `<h5 class="lead text-info">By: ${arrayBooks[i].author_name}</h5>`;
+        searchResult += `<p>Published: ${arrayBooks[i].first_publish_year}</p>`;
+        searchResult += `<button id="save--article--btn" type="button" class="btn btn-light btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off" target="my--btn--news">Add to Bookshelf</button>`;
     }
     // Grabs the empty <div> from index.html with the ID of "content" and fills it with "newContent"
     document.getElementById('search-results').innerHTML = searchResult;

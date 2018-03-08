@@ -65,15 +65,22 @@ main {
 
 .containers {                   //styling for div containers
     display: grid;
-    grid-template-rows: 10px auto;
+    grid-template-rows: 40px 40px auto;
     grid-template-columns: 50% 50%;
     min-height: 400px;
     border: 1px solid white;
     margin: 1rem;
     min-width: 300px;
     padding: 1.7rem;
-
 }
+
+// BS --- books div
+#search-bar {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
 
 // PH --- div styling
 
