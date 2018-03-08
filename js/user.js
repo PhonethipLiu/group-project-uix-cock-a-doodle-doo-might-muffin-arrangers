@@ -11,10 +11,11 @@ console.log("user.js here");
 
 
        
-        function logInGoogle() {
+        function googleLogIn() {
+
             return firebase.auth().signInWithPopup(provider);
         }
-        function logOut() {
+        function googleLogOut() {
             return firebase.auth().signOut();
         }
         function setUser(val) {
@@ -39,4 +40,4 @@ console.log("user.js here");
 
             
 
-        module.exports = {logInGoogle, logOut, setUser, getUser} ;
+module.exports = { googleLogIn, googleLogOut, setUser, getUser };

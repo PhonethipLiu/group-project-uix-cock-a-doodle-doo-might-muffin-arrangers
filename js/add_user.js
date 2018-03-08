@@ -11,21 +11,14 @@ var firebase = require("./config");
 
 
 
+function buildUserObj(UID) {
+    let userObj = {
+        // email: .email,
+        // fullName: .value,
+        zipCode: "",
+        uid: user.getUser()
+    };
+    return userObj;
+}
 
-// let hideLogButtons = (currentUser) => {
-//     // console.log('hideLogButtons function started');
-//     if (currentUser !== null) {
-//         $('#login').attr('hidden', true);
-//         $('#logout').removeAttr('hidden', true);
-//     } else if (currentUser === null) {
-//         // console.log('hiding logout button');
-//         $('#logout').attr('hidden', true);
-//         $('#login').removeAttr('hidden', true);
-//     }
-//     // console.log('hideLogButtons function ended');
-
-// };
-
-
-
-// module.exports = {hideLogButtons};
+module.exports = { buildUserObj };

@@ -14,10 +14,10 @@ console.log("main js here");
 
 
 // Preparing the object to be posted to firebase
-function createUserObj() {
+function createUserObj(a) {
     let userObj = {
-        name: "",
-        location: "",
+        name: '',
+        location: '',
         uid: user.getUser()
     };
     console.log("userObj", userObj);
@@ -27,30 +27,55 @@ function createUserObj() {
 //login//
 $("#login").click(function () {
     console.log("clicked auth");
-    user.logInGoogle()
+    user.googleLogIn()
         .then((result) => {
             console.log("result from login", result.user.uid);
+            // let usero=createUserObj{}
             user.setUser(result.user.uid);
             $("#login").addClass("d-none");
-            $("#userPic").removeClass("d-none").html(`<img src="${result.user.photoURL}" alt="${result.user.displayName} photo from Google" class="profPic rounded-circle">`);
+            $("#userPic").removeClass("d-none").html(`<img src="${result.user.photoURL}" alt="${result.user.displayName} photo from Google" class="profPic rounded-circle" width="50">`);
             console.log("login complete!");
             sendToFirebase();
         });
 
 });
          
-$("#logout").click(() => {
-    console.log("logout clicked");
-    user.logOut();
-    $("#userPic").addClass("d-none");
-    $("#login").removeClass("d-none");
-    $("#logout").addClass("d-none");
-    $("#secondaryLogin").removeClass("d-none");
-});
+
+            function sendToFirebase() {
+                let userBuild = createUserObj();
+                //need to add logic to not add to firebase if user is already in firebase by UID
+      
+                interaction.addUser(userBuild);
+            }    
 
 
-function sendToFirebase() {
-    let userBuild = createUserObj();
-    //need to add logic to not add to firebase if user is already in firebase by UID
-    user.addUser(userBuild);
-}    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $("#logout").click(() => {
+//     console.log("logout clicked");
+//     user.logOut();
+//     $("#userPic").addClass("d-none");
+//     $("#login").removeClass("d-none");
+//     $("#logout").addClass("d-none");
+//     $("#secondaryLogin").removeClass("d-none");
+// });
+

@@ -11,15 +11,14 @@ let $ = require('jquery'),
    
 
 
-
-function addUser(userObj) {  
-    return $.ajax({  
+function addUser(userObj) {
+    console.log("add user to firebase", userObj);
+    return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/userInfo.json`,
-        type: 'POST',   
+        type: 'POST',
         data: JSON.stringify(userObj),
         dataType: 'json'
     }).done((userID) => {
-        console.log("what is the new id?", userID);
         return userID;
     });
 }
