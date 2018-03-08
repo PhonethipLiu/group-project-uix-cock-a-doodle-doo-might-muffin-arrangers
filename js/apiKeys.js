@@ -8,4 +8,17 @@
 //     // };
 // }
 
-// module.exports = getKey;
+
+let meetupsAPI = "https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=10&page=10&key=742a785d27225b161f1072604e5e3a27";
+
+
+function getKey() {
+    return {
+        meetupsApiKey: "742a785d27225b161f1072604e5e3a27",
+        authDomain: "https://api.meetup.com",
+        databaseURL: "https://mighty-muffin-avengers.firebaseio.com/",
+        fbWebApiKey: "AIzaSyBMVc4fH_p-3aJfxx3En0kdzvNxrssHu6A"
+    };
+}
+
+module.exports = { meetupsAPI, getKey };
