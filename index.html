@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
-
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Might Muffin Organizer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <!-- Bootstrap css -->
-        <link rel="stylesheet" type="text/css" media="screen" href="lib/node_modules/bootstrap/dist/css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="lib/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
         <!-- local css -->
-        <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
     </head>
 
-
     <body id="site--grid">
-        
         <header>
-
             <div id="welcome--div">
                 <h1>Hi, Brenda!</h1>
                 <button>Edit Profile</button>
@@ -67,12 +62,9 @@
                 <img src="imgs/cock-a-doodle.png" alt="logo" id="logo--img"/>
                 <h1 id="main--h1">DOO<br/>DASHBOARD</h1>
             </div>
-
         </header>
         
-        
         <main>
-
             <div id="news--div" class="containers">
                 <h3 class="col-h3">NEWS</h3>
                 <button class="my-btn" id="my--btn--news" onclick="addNewArticle()" >MY NEWS</button>
@@ -81,28 +73,31 @@
                 </ol>
             </div>
 
-            <div id="meetups--div" class="containers"><h3 class="col-h3">MEETUPS</h3><button class="my-btn">MY MEETUPS</button><div id="meetup--list--div"></div></div>
-            <div id="books--div" class="containers"><h3 class="col-h3">BOOKS</h3><button class="my-btn">MY BOOKS</button></div>
-           
+            <div id="meetups--div" class="containers">
+                <h3 class="col-h3">MEETUPS</h3>
+                <button class="my-btn">MY MEETUPS</button>
+                <div id="meetup--list--div"></div>
+            </div>
+
+            <div id="books--div" class="containers">
+                    <h3 class="col-h3">BOOKS</h3>
+                    <button class="my-btn">MY BOOKS</button>
+                    <input id="search-bar" type="search" placeholder="Search books" aria-label="Search">
+                    <div id="search-results"></div>
+                </div>
         </main>
 
 
         <footer class="main-footer">
-
             <ul id="footer--cred">
-
                 <li><a href="https://newsapi.org/">news.api</a></li>
                 <li><a href="url">weather.api</a></li>
                 <li><a href="https://www.meetup.com/meetup_api/">meetups.api</a></li>
                 <li><a href="url">books.api</a></li>
-
             </ul>
-
         </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script type='text/javascript' src='dist/app.js'></script>
     </body>
-
 </html>
-
