@@ -15,8 +15,9 @@ require("firebase/database");  //what is this requiring??
 //     databaseURL: fbData.databaseURL
 // };
 
+// firebase.initializeApp(config);
 
-// firebase.getFBsettings = function () {
+// firebase.getFBsettings = () => {
 //     console.log("getFBsettings", config);
 //     return config;
 // };

@@ -18,7 +18,7 @@ var populateNewsDiv = $("#news--list");
 
 
 function outputNews(newsList) {
-    console.log("what is this newArticle in the outputNews function", newsList);
+    // console.log("what is this newArticle in the outputNews function", newsList);
     
     //parameter to make it runs if there is a newsArticles
     if (newsList.articles) {
@@ -38,7 +38,7 @@ function outputNews(newsList) {
 
 
 function newsAPICall() {
-    console.log("newsKey", newsKey);
+    // console.log("newsKey", newsKey);
     let urlString = `${newsKey.authDomain}&apiKey=${newsKey.newsAPI}`;
     return $.ajax({
         url: `${newsKey.authDomain}&apiKey=${newsKey.newsAPI}`,
@@ -47,9 +47,9 @@ function newsAPICall() {
 }
 
 
-news = newsAPICall("https://newsapi.org/v2/top-headlines?country=us")
+news = newsAPICall("https://newsapi.org/v2/top-headlines?country=us&limit=10")
 .then ((resolve) => {
-    console.log("makeAPICall for top News Resolved", resolve); 
+    // console.log("makeAPICall for top News Resolved", resolve); 
     outputNews(resolve); // I want it to do this function
     },
     (reject) => {
