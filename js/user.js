@@ -7,11 +7,15 @@ console.log("user.js here");
        let firebase = require("./config"),
         provider = new firebase.auth.GoogleAuthProvider(),
         currentUser = null;
-        // var googleUser = document.getElementById("auth-btn");
-        // googleUser.addEventListener("click",logInGoogle);
+
+
+
+        var googleUser = document.getElementById("login");
+        googleUser.addEventListener("click",logInGoogle);
         function logInGoogle() {
             return firebase.auth().signInWithPopup(provider);
         }
+           
         function logOut() {
             return firebase.auth().signOut();
         }
@@ -30,5 +34,13 @@ console.log("user.js here");
                 console.log("NO USER LOGGED IN");
             }
         });
+
+
+
+
+
+            // var googleUser2 = document.getElementById("logout");
+            // googleUser2.addEventListener("click", logout);
+
 
         module.exports = { logInGoogle, logOut, setUser, getUser };

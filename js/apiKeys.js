@@ -1,5 +1,5 @@
 "use strict";
-
+////// * FIREBASE key for news *start ////
 function getKey() {
     return {
         apiKey: "AIzaSyBMVc4fH_p-3aJfxx3En0kdzvNxrssHu6A",
@@ -9,20 +9,18 @@ function getKey() {
 
     };
 }
+////// * FIREBASEkey for news *End////
 
-module.exports = getKey;
+////// * PH API key for news *start /////
 
-// module.exports = getKey;
+function getNewsKey (){
+    return{
+        apiKey: "511e64b5fdc44764af3517769a250375",
+        authDomain: "",
+        databaseURL: ""
+    };
+}
 
-////// * PH API key for news * /////
+module.exports = {getNewsKey, getKey};
 
-// function getNewsKey (){
-//     return{
-//         apiKey: "511e64b5fdc44764af3517769a250375",
-//         authDomain: "",
-//         databaseURL: ""
-//     };
-// }
-
-// module.exports = getNewsKey
-
+////// * PH API key for news *End/////
