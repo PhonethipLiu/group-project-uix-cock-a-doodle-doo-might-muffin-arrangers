@@ -84,7 +84,7 @@ window.onload = function () {
     }
 
     function update(weather) {
-        icon.src = `${../imgs/codes}${weather.icon}.png`;
+        icon.src = ("../imgs/codes") + weather.icon +".png";
         humidity.innerHTML = weather.humidity;
         wind.innerHtml = weather.wind;
         direction.innerHTML = weather.direction;
