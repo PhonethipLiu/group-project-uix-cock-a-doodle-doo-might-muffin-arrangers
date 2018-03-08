@@ -3,18 +3,18 @@ console.log("meetups-set.js here");
 
 let meetupData = require("./meetups-getter");
 
-function showMeetups() {
-    console.log("function meetups", meetupData);
-}
-
-var a = 0;
-
-
-
 meetupData.getMeetup()
 .then((data) => {
-    console.log("GetMeetups with meetUps data", data);
+    makeMeetupList(data);
 });
 
-module.exports = { a };
+let makeMeetupList = (data) => {
+    let meetupListDiv = document.createElement("div");
+    meetupListDiv.setAttribute("id", "meetupListDiv");
+    console.log("GetMeetups with meetUps data", data.events);
+    meetupListDiv.innerHTML = data.events.map(meetupData.createMeetupCards);
+    document.getElementById("meetups--div").appendChild(meetupListDiv);
+};
+
+module.exports = {  };
 
