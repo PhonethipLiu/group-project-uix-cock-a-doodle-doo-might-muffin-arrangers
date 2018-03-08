@@ -20,7 +20,6 @@ search.captureInput = () => {
     });
 };
 
-
 // From the API Call, get the data and search through it for matches to the parameter passed into it...
 let bookSearch = (userInput) => {
     bookQuery.booksGetter(userInput)
@@ -35,7 +34,7 @@ let bookDisplay = (arrayBooks) => {
     console.log(arrayBooks);
     let searchResult = "";
     for (let i = 0; i < arrayBooks.length; i++) {
-        searchResult += `<img src="${arrayBooks[i].cover_i}"><img>`
+        searchResult += `<img src="${arrayBooks[i].cover_i}"><img>`;
         searchResult += `<h1>${arrayBooks[i].title}</h1>`;
         searchResult += '<h3 class="lead text-info">By: ' + arrayBooks[i].author_name + '</h3>';
         searchResult += '<p class="lead text-info">Published: ' + arrayBooks[i].first_publish_year + '</p>';
