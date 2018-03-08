@@ -12,16 +12,18 @@
 let meetupsAPI = "https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&lon=10&page=10&key=742a785d27225b161f1072604e5e3a27";
 
 
+let newsAPI = "https://newsapi.org/v2/top-headlines?country=us&limit=10&apiKey=511e64b5fdc44764af3517769a250375";
+
+
 function getNewsKey(){
     return{
-        newsApiKey: "511e64b5fdc44764af3517769a250375",
-        authDomain: "https://mighty-muffin-avengers.firebaseio.com",
-        databaseURL: "https://newsapi.org/v2/top-headlines?country=us",
+        newsAPI: "511e64b5fdc44764af3517769a250375",
+        authDomain: "https://newsapi.org/v2/top-headlines?country=us&limit=10",
+        databaseURL: "https://mighty-muffin-avengers.firebaseio.com/",
         fbWebApiKey: "AIzaSyBMVc4fH_p-3aJfxx3En0kdzvNxrssHu6A"
     };
 }
 
-module.exports = getNewsKey;
 
 
 function getKey() {
@@ -33,5 +35,5 @@ function getKey() {
     };
 }
 
-module.exports = { meetupsAPI, getKey };
+module.exports = {  meetupsAPI, getKey, getNewsKey, newsAPI };
 

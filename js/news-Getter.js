@@ -6,10 +6,8 @@ let $ = require('jquery');
 // let outputNews = require('./news-Setter');
 
 let news ={};
-// let newsApiKey = require('./apikeys');
-// let url = "https://newsapi.org/v2/top-headlines?country=us";
-// let newsApiKey, url = require('./apikeys');
-// var newsApiKey = "511e64b5fdc44764af3517769a250375";
+let newsAPI = require('./apikeys');
+var newsKey = newsAPI.getNewsKey();
 
 var newsDiv = document.getElementById("news--div");
 // console.log("targeting news div in dom", newsDiv);
@@ -17,8 +15,6 @@ var newsDiv = document.getElementById("news--div");
 //jQuery to put everything in an array
 var populateNewsDiv = $("#news--list");
 // console.log("what is in the populateNewDiv jquery", populateNewsDiv[0]);
-
-///////// functions and calls ///////////
 
 
 function outputNews(newsList) {
@@ -41,11 +37,11 @@ function outputNews(newsList) {
 }
 
 
-function newsAPICall(url) {
+function newsAPICall() {
+    console.log("newsKey", newsKey);
+    let urlString = `${newsKey.authDomain}&apiKey=${newsKey.newsAPI}`;
     return $.ajax({
-        url: url,
-       newsApiKey: require('./apikeys'),
-        // key: newsApiKey,
+        url: `${newsKey.authDomain}&apiKey=${newsKey.newsAPI}`,
         dataType: "json"
     });
 }
