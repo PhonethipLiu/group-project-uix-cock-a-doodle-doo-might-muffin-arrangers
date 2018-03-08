@@ -40,4 +40,4 @@ let hideLogButtons = (currentUser) => {
 
 
 
-module.exports = { addUser, hideLogButtons };
+module.exports = addUser(use), hideLogButtons;

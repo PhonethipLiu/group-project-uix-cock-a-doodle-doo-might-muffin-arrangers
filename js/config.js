@@ -26,4 +26,7 @@ firebase.getFBsettings = () => {
     return config;
 };
 
+
+
+
 module.exports = firebase;

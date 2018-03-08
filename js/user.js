@@ -10,12 +10,14 @@ console.log("user.js here");
 
 
 
-        var googleUser = document.getElementById("login");
-        googleUser.addEventListener("click",logInGoogle);
+        // var googleUser = document.getElementById("login");
+        // googleUser.addEventListener("click",logInGoogle);
         function logInGoogle() {
             return firebase.auth().signInWithPopup(provider);
         }
-           
+        //    var googleUser2 = document.getElementById("logout");
+        //     googleUser2.addEventListener("click", logout);
+
         function logOut() {
             return firebase.auth().signOut();
         }
@@ -39,8 +41,6 @@ console.log("user.js here");
 
 
 
-            // var googleUser2 = document.getElementById("logout");
-            // googleUser2.addEventListener("click", logout);
+            
 
-
-        module.exports = { logInGoogle, logOut, setUser, getUser };
+        module.exports = logInGoogle, logOut, setUser, getUser ;

@@ -15,12 +15,13 @@ function getKey() {
 
 function getNewsKey (){
     return{
-        apiKey: "511e64b5fdc44764af3517769a250375",
+        apiKey:"511e64b5fdc44764af3517769a250375",
         authDomain: "",
         databaseURL: ""
     };
 }
 
-module.exports = {getNewsKey, getKey};
+module.exports = getNewsKey;
+ module.exports=getKey;
 
 ////// * PH API key for news *End/////
