@@ -6,7 +6,23 @@ function getKey() {
         authDomain: "mighty-muffin-avengers.firebaseapp.com",
         databaseURL: "https://mighty-muffin-avengers.firebaseio.com"
 
+
     };
 }
 
 module.exports = getKey;
+
+// module.exports = getKey;
+
+////// * PH API key for news * /////
+
+// function getNewsKey (){
+//     return{
+//         apiKey: "511e64b5fdc44764af3517769a250375",
+//         authDomain: "",
+//         databaseURL: ""
+//     };
+// }
+
+// module.exports = getNewsKey
+

@@ -4,10 +4,11 @@ console.log("main js here");
 
        let $ = require('jquery'),
        news = require("./news-Getter"),
-       db = require('./ajaxCall'),
+       meetup = require('./ajaxCall'),
        bookSearch = require("./books-getter"),
        weather=require("./weather_load"),
        user=require("./user");
+       addUser =require("./add_user")
        
         
 let firebase;
@@ -52,7 +53,6 @@ function buildUserObj(userId, name, email, imageUrl, uid) {
               
                 });
             }
-
 
 
 
