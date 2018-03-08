@@ -12,12 +12,12 @@ var firebase = require("./config");
 
 
 
-function addUser(use) {
+function addUser(userformObj) {
     // console.log("addUser", userObj);
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/users.json`,
-        type: 'POST',
-        data: JSON.stringify(use),
+        dataType: 'POST',
+        data: JSON.stringify(userformObj),
         dataType: 'json'
     }).done((userID) => {
         return userID;
@@ -40,4 +40,4 @@ let hideLogButtons = (currentUser) => {
 
 
 
-module.exports = addUser(use), hideLogButtons;
+module.exports = {addUser,hideLogButtons};
