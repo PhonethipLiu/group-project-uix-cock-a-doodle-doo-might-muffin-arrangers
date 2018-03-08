@@ -12,12 +12,12 @@
 
 ////// * PH API key for news * /////
 
-// function getNewsKey (){
-//     return{
-//         apiKey: "511e64b5fdc44764af3517769a250375",
-//         authDomain: "",
-//         databaseURL: ""
-//     };
-// }
+function getNewsKey(){
+    return{
+        apiKey: "511e64b5fdc44764af3517769a250375",
+        // authDomain: "https://mighty-muffin-avengers.firebaseio.com",
+        databaseURL: "https://newsapi.org/v2/top-headlines?country=us"
+    };
+}
 
-// module.exports = getNewsKey
+module.exports = getNewsKey;

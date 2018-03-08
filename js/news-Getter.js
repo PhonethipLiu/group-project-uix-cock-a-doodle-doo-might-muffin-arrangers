@@ -5,10 +5,11 @@ console.log("News API data in the house");
 let $ = require('jquery');
 // let outputNews = require('./news-Setter');
 
-let news = {};
-
-var url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=511e64b5fdc44764af3517769a250375&limit=10";
-// var newsApiKey = "511e64b5fdc44764af3517769a250375&limit=10";
+let news ={};
+// let newsApiKey = require('./apikeys');
+// let url = "https://newsapi.org/v2/top-headlines?country=us";
+// let newsApiKey, url = require('./apikeys');
+// var newsApiKey = "511e64b5fdc44764af3517769a250375";
 
 var newsDiv = document.getElementById("news--div");
 // console.log("targeting news div in dom", newsDiv);
@@ -17,8 +18,11 @@ var newsDiv = document.getElementById("news--div");
 var populateNewsDiv = $("#news--list");
 // console.log("what is in the populateNewDiv jquery", populateNewsDiv[0]);
 
+///////// functions and calls ///////////
+
+
 function outputNews(newsList) {
-    // console.log("what is this newArticle in the outputNews function", newsList);
+    console.log("what is this newArticle in the outputNews function", newsList);
     
     //parameter to make it runs if there is a newsArticles
     if (newsList.articles) {
@@ -40,12 +44,14 @@ function outputNews(newsList) {
 function newsAPICall(url) {
     return $.ajax({
         url: url,
+       newsApiKey: require('./apikeys'),
+        // key: newsApiKey,
         dataType: "json"
     });
 }
 
 
-news = newsAPICall(url)
+news = newsAPICall("https://newsapi.org/v2/top-headlines?country=us")
 .then ((resolve) => {
     console.log("makeAPICall for top News Resolved", resolve); 
     outputNews(resolve); // I want it to do this function
@@ -56,4 +62,4 @@ news = newsAPICall(url)
 );
 
 
-module.exports = newsAPICall(url);
+module.exports = newsAPICall();
