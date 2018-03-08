@@ -65,7 +65,15 @@
         </header>
         
         <main>
-            <div id="news--div" class="containers"><h3 class="col-h3">NEWS</h3><button class="my-btn">MY NEWS</button></div>
+
+            <div id="news--div" class="containers">
+                <h3 class="col-h3">NEWS</h3>
+                <button class="my-btn" id="my--btn--news" onclick="addNewArticle()" >MY NEWS</button>
+                <ol class="list" id="news--list">
+
+                </ol>
+            </div>
+
             <div id="meetups--div" class="containers"><h3 class="col-h3">MEETUPS</h3><button class="my-btn">MY MEETUPS</button></div>
             <div id="books--div" class="containers">
                 <h3 class="col-h3">BOOKS</h3>
@@ -75,7 +83,8 @@
             </div>
         </main>
 
-        <footer>
+
+        <footer class="main-footer">
             <ul id="footer--cred">
                 <li><a href="https://newsapi.org/">news.api</a></li>
                 <li><a href="url">weather.api</a></li>
