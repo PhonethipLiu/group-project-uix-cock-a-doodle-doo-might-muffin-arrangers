@@ -25,7 +25,6 @@ function getNewsKey(){
 }
 
 
-
 function getKey() {
     return {
         meetupsApiKey: "742a785d27225b161f1072604e5e3a27",

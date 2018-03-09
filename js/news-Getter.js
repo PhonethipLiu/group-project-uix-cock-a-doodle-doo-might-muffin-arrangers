@@ -16,7 +16,6 @@ var populateNewsDiv = $("#news--list"); //jQuery to put everything in an array
 function outputNews(newsList) {
     // console.log("what is this newArticle in the outputNews function", newsList);
     
-    //parameter to make it runs if there is a newsArticles
     if (newsList.articles) {
         for (let i = 0; i < 10; i++) {
             var articles= newsList.articles;
@@ -26,7 +25,7 @@ function outputNews(newsList) {
             <h4 class="list-headline"><a class="list-link" target="_blank" href="${articles[i].url}">${articles[i].title} </a> </h4>
             <p class="list-summary">${articles[i].description} </p>
             <footer class="list-footer"> Source: ${articles[i].source.name}</footer>
-            <button id="save--article--btn" type="button" class="btn btn-light btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off" target="my--btn--news"> save article </button> </li>`);
+            <button id="save--article--btn-${[i]}" type="button" class="btn btn-light btn-sm"> save article </button> </li>`);
         }
     }
 }
