@@ -14,7 +14,12 @@ let makeMeetupList = (data) => {
     console.log("GetMeetups with meetUps data", data.events);
     meetupListDiv.innerHTML = data.events.map(meetupData.createMeetupCards);
     document.getElementById("meetups--div").appendChild(meetupListDiv);
+    document.getElementsByClassName("meetup-button").addEventListener("click", saveMeetup());
 };
 
-module.exports = {  };
+
+function saveMeetup(){
+
+}
+
 
