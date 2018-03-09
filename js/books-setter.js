@@ -62,15 +62,39 @@ let bookDisplay = (arrayBooks) => {
     // Grabs the empty <div> from index.html with the ID of "content" and fills it with "newContent"
     document.getElementById('search-results').innerHTML = searchResult;
 };
+let bookshelfDisplay = (arrayBooks) => {
+    let searchResult = "";
+    for (let i = 0; i < arrayBooks.length; i++) {
+        // Adds thumbnail image of book cover; takes too long to load & sometimes returns no image at all
+        // if (arrayBooks[i].isbn) {
+        //     let bookThumbnail = arrayBooks[i].isbn[0];
+        //     searchResult += `<img src="http://covers.openlibrary.org/b/isbn/${bookThumbnail}-S.jpg" alt="book cover thumbnail image">`;
+        // }
+        searchResult += `<div class="book-search-result"><h4 class="book-title list-headline">${arrayBooks[i].title}</h4>`;
+        searchResult += `<p class="author-name list-summary">${arrayBooks[i].author_name}</p>`;
+        searchResult += `<footer class="pub-date list-footer">${arrayBooks[i].first_publish_year}</footer>`;
+    }
+    // Grabs the empty <div> from index.html with the ID of "content" and fills it with "newContent"
+    document.getElementById('search-results').innerHTML = searchResult;
+};
 
 function clickAddToBookshelf(button) {
     $(button).on("click", (e) => {
         let savedBook = {};
         savedBook.title = e.target.parentNode.childNodes[0].innerText;
-        savedBook.author = e.target.parentNode.childNodes[1].innerText;
-        savedBook.pubDate = e.target.parentNode.childNodes[2].innerText;
+        savedBook.author_name = e.target.parentNode.childNodes[1].innerText;
+        savedBook.first_publish_year = e.target.parentNode.childNodes[2].innerText;
         bookshelf.push(savedBook);
     });
 }
+
+function displayBookshelf() {
+    $("#bookshelf-button").on("click", (e) => {
+        $("#search-results").html("");
+        bookshelfDisplay(bookshelf);
+    });
+}
+
+displayBookshelf();
 
 module.exports = {bookSearch};
