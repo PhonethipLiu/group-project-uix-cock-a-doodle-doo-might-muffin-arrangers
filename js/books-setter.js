@@ -45,13 +45,23 @@ let bookDisplay = (arrayBooks) => {
         //     let bookThumbnail = arrayBooks[i].isbn[0];
         //     searchResult += `<img src="http://covers.openlibrary.org/b/isbn/${bookThumbnail}-S.jpg" alt="book cover thumbnail image">`;
         // }
-        searchResult += `<h4 class="list-headline">${arrayBooks[i].title}</h4>`;
+        searchResult += `<div class="book-search-result"><h4 class="list-headline">${arrayBooks[i].title}</h4>`;
         searchResult += `<p class="list-summary">By: ${arrayBooks[i].author_name}</p>`;
         searchResult += `<footer class="list-footer">Published: ${arrayBooks[i].first_publish_year}</footer>`;
-        searchResult += `<button id="save--article--btn" type="button" class="btn btn-light btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off" target="my--btn--news">Add to Bookshelf</button>`;
+        searchResult += `<button id="save--book--btn" type="button" class="btn btn-light btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off" target="my--btn--news">Add to Bookshelf</button></div>`;
     }
     // Grabs the empty <div> from index.html with the ID of "content" and fills it with "newContent"
     document.getElementById('search-results').innerHTML = searchResult;
 };
+
+let booklist = [];
+
+let addToBookshelfButton = document.getElementById("save--book--btn");
+
+function addToBookshelf() {
+    
+}
+
+addToBookshelfButton.onclick = addToBookshelf;
 
 module.exports = {bookSearch, search};
