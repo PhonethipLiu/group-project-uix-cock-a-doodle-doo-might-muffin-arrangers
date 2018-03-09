@@ -2,12 +2,21 @@
 
 console.log("News saving articles js");
 
-let myArticles = document.getElementById("my--btn--news");
-myArticles.addEventListener("click", saveMyArticle);
+let $ = require("jquery"),
+firebase = require("./config");
+
+let myArticles = $("#my--btn--news");
+
+// myArticles.click( function() {
+//     saveArticle.append(xxxx.push( ));
+// });
 let saveArticle = [] ; // want to target the news article/object that is displayed here
 
-function saveMyArticle(){
+
+function saveMyArticle(user){
+
    
 }
+
 console.log(saveArticle);
 

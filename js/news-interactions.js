@@ -2,6 +2,34 @@
 
 let $ = require('jquery'),
 firebase = require("./config");
+var myArticles = require("./news-Getter");
+var saveArticle = Object.assign({}, myArticles) ; // want to target the news article/object that is displayed here
+
+myArticles.click( function() {
+    saveArticle.assign();
+});
+
+
+
+function saveMyArticle(user){
+
+   
+}
+
+function addSaveNews(newSavedObj) {
+    console.log("editMyNews",newSavedObj);
+    return $.ajax({
+        url:`${firebase.getFBsettings().databaseURL}/news.json`,
+        type: "POST",
+        data: JSON.stringify(newSavedObj),
+        dataType: "json"
+    }).done( (saveArticle) => {
+        console.log("what is newsID:", saveArticle);
+        return saveArticle;
+    });
+   
+}
+
 
 // I want the user to get the news top 10 headlines from firebase
 //  function getNewsData() === need to write this function
@@ -19,14 +47,14 @@ firebase = require("./config");
 function getNews() {
     return $.ajax ({
         url: `${firebase.getFBsettings().databaseURL}/news.json`
-    }).done( (getNewsData) => {
-        console.log("this function in promise", getNewsData);
-        return getNewsData;
+    }).done( (myArticles) => {
+        console.log("this function in promise", myArticles);
+        return myArticles;
     });
 }
 
 function addSaveNews(newsFormObj) {
-    console.log("editMyNews", newsFormObj);
+    console.log("addSaveNews", newsFormObj);
     return $.ajax({
         url:`${firebase.getFBsettings().databaseURL}/news.json`,
         type: "POST",

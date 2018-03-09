@@ -8,14 +8,10 @@ let $ = require('jquery');
 let news ={};
 let newsAPI = require('./apikeys');
 var newsKey = newsAPI.getNewsKey();
-
 var newsDiv = document.getElementById("news--div");
 // console.log("targeting news div in dom", newsDiv);
-
-//jQuery to put everything in an array
-var populateNewsDiv = $("#news--list");
+var populateNewsDiv = $("#news--list"); //jQuery to put everything in an array
 // console.log("what is in the populateNewDiv jquery", populateNewsDiv[0]);
-
 
 function outputNews(newsList) {
     // console.log("what is this newArticle in the outputNews function", newsList);
@@ -31,11 +27,9 @@ function outputNews(newsList) {
             <p class="list-summary">${articles[i].description} </p>
             <footer class="list-footer"> Source: ${articles[i].source.name}</footer>
             <button id="save--article--btn" type="button" class="btn btn-light btn-sm" data-toggle="button" aria-pressed="false" autocomplete="off" target="my--btn--news"> save article </button> </li>`);
-            
         }
     }
 }
-
 
 function newsAPICall() {
     // console.log("newsKey", newsKey);
