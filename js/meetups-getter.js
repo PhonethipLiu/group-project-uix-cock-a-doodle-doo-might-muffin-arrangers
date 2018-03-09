@@ -1,5 +1,7 @@
 "use strict";
+
 console.log("ajax call");
+
 let $ = require('jquery');
 
 let apiKey = require("./apiKeys");
@@ -31,10 +33,10 @@ function createMeetupCards (events) {
     let currentMeetupTime = events.local_time;
     let currentMeetupDate = events.local_date;
     let form =
-        `<h4 class="list-headline"><a href=${events.link}>"${meetupItem.name}</a></h4>
+        `<h4 class="list-headline"><a class="meetup-link" href="${events.link}">${meetupItem.name}</a></h4>
         <date>${events.local_date}</date>
         <time>${events.local_time}</time></br>
-        <button id="${events.id}" class=${meetupItem.meetupBtnId}>${meetupItem.meetupBtnText}</button>`;
+        <button id="${events.id}" class="meetup-button">${meetupItem.meetupBtnText}</button>`;
         return form;
 }
 
