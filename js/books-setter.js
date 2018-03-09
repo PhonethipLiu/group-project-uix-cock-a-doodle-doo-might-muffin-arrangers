@@ -54,14 +54,14 @@ let bookDisplay = (arrayBooks) => {
     document.getElementById('search-results').innerHTML = searchResult;
 };
 
-let booklist = [];
+// let booklist = [];
 
-let addToBookshelfButton = document.getElementById("save--book--btn");
+// let addToBookshelfButton = document.getElementById("save--book--btn");
 
-function addToBookshelf() {
+// function addToBookshelf() {
     
-}
+// }
 
-addToBookshelfButton.onclick = addToBookshelf;
+// addToBookshelfButton.onclick = addToBookshelf;
 
 module.exports = {bookSearch, search};
