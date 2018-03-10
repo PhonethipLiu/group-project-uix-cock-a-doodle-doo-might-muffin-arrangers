@@ -17,7 +17,6 @@ let setMeetups = require('./meetups-set');
 
 // var weather_load=require("./weather_load");
 
-booklist.search.captureInput();
 // var weather_load=require("./weather_load");
 
 // var weather_load=require("./weather_load");
