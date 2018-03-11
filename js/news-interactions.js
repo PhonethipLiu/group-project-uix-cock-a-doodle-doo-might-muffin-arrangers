@@ -3,58 +3,32 @@
 let $ = require('jquery'),
 firebase = require("./config");
 var myArticles = require("./news-Getter");
-var saveArticle = Object.assign({}, myArticles) ; // want to target the news article/object that is displayed here
 
-let button; //= $(`#save--article--btn-${i]}`);
-var myNews =[];
-
-myArticles = (userInput) => {
+// myArticles = (userInput) => {
     
 
-//    myArticles.newsAPICall()
-    // console.log("myArticles", myArticles);
-    .then((response) => {
-        let savedNews = response;
-        console.log("saved News:", savedNews.myArticles);
-    }).then(() => {
+// //    myArticles.newsAPICall()
+//     // console.log("myArticles", myArticles);
+//     .then((response) => {
+//         let savedNews = response;
+//         console.log("saved News:", savedNews.myArticles);
+//     }).then(() => {
         
-            clickAddToBookshelf(button);
-            console.log(savedNews);
-        }
-    );
-};
-//save object to another array
-function clickSaveMyArticle(button) {
-    $(button).on("click", (event) => {
-        console.log("button");
-        // let saveNews = Object.assign({}, obj);
-        let saveNews = {};
-        saveNews.title = event.tagert.parentNode.childNodes[0].innerText;
-        saveNews.title = event.tagert.parentNode.childNodes[1].innerText;
-        saveNews.title = event.tagert.parentNode.childNodes[2].innerText;
-        myNews.push(saveNews);
-    });
-}
+//             clickAddToBookshelf(button);
+//             console.log(savedNews);
+//         }
+//     );
+// };
 
-button.on("click", (event) => {
-    console.log("button:", button);
-    saveArticle.assign();
-});
+
+// button.on("click", (event) => {
+//     console.log("button:", button);
+//     saveArticle.assign();
+// });
 
 // function saveMyArticle(user){
  
 // }
-
-
-// From the API Call, get the data and search through it for matches to the parameter passed into it...
-
-
-
-function clickAddToBookshelf(button) {
-    $(button).on("click", (e) => {
-        alert("You added a book!");
-    });
-}
 
 
 // I want the user to get the news top 10 headlines from firebase
